@@ -24,7 +24,8 @@ const AppReducer = (state, action) => {
 
 const initialState = {
     budget: 2000,
-    expenses: []
+    expenses: [],
+    expensesTotal: 0
 }
 
 export const AppContext = createContext()
@@ -36,6 +37,7 @@ export const AppProvider = (props) => {
         <AppContext.Provider value={{
             budget: state.budget,
             expenses: state.expenses,
+            expensesTotal: state.expensesTotal,
             dispatch
         }}>
             {props.children}

@@ -1,37 +1,38 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AddExpense from "./AddExpense";
 import ExpenseItem from "./ExpenseItem";
 import { AppContext } from "../context/AppContext";
 
+// Component for list of expenses
 
-const ExpenseList = () => {
+const ExpenseList = (props) => {
 
+    // Pull current list of expenses from global state
     const { expenses } = useContext(AppContext)
-    console.log(expenses)
 
     return (
-        <div class="columns is-centered mx-6">
+        <section class="section columns is-centered px-6 m-0 has-background-white-bis">
+            <div class="column is-one-quarter">
+                <AddExpense />
+            </div>
             <div class="column is-one-third">
-                <h1 class="title is-3 has-text-dark">Expenses</h1> 
+                <h1 class="title is-3">Expenses</h1> 
                 <div class="box">
+                    {/* Passes information to ExpenseItem component, which will render the expense items */}
                     { expenses.length === 0 ? <p class="has-text-centered">Start adulting by adding some expenses!</p> :
                         <ul>
                         {expenses.map((expenses) => 
                             <ExpenseItem
                                 id={expenses.id}
                                 name={expenses.name}
-                                cost={expenses.cost} />
+                                cost={expenses.cost}
+                            />
                         )}
                         </ul>
                     }
                 </div>
             </div>
-            <div class="column is-one-quarter">
-                <AddExpense />
-            </div>
-        </div>
-        
-        
+        </section>
     )
 }
 

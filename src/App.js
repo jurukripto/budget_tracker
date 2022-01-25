@@ -2,7 +2,7 @@ import React from "react";
 import BudgetStats from "./components/BudgetStats";
 import Title from "./components/Title";
 import ExpenseList from "./components/ExpenseList"
-import AddExpense from "./components/AddExpense";
+import Footer from "./components/Footer";
 import { AppProvider } from "./context/AppContext";
 
 
@@ -14,9 +14,9 @@ const App = () => {
           <Title />
           <BudgetStats />
           <ExpenseList />
+          <Footer />
         </div>
     </AppProvider>
-    
   )
 }
 

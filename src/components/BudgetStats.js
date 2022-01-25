@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Budget from "./Budget";
 import Remaining from "./Remaining";
 import ExpensesTotal from "./ExpensesTotal";
 
+// This component acts as the container for components that display balances
 
 const BudgetHandler = () => {
     
-
     return (
         <section class="section columns is-centered mx-3">
             <div class="column is-one-fifth">
